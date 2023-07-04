@@ -131,8 +131,8 @@ public class DeviceControlActivity extends AppCompatActivity {
                 invalidateOptionsMenu();
                 clearUI();
                 Intent intent2 = new Intent(DeviceControlActivity.this, DeviceScanActivity.class);
-
                 startActivity(intent2);
+                finish();
             } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED.equals(action)) {
                 // Show all the supported services and characteristics on the user interface.
                 displayGattServices(mBluetoothLeService.getSupportedGattServices());
@@ -290,7 +290,6 @@ public class DeviceControlActivity extends AppCompatActivity {
         }
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
